@@ -42,14 +42,18 @@ type Book struct {
 git clone https://github.com/vikranth-worldergroup/golang-bookstore-api.git
 cd golang-bookstore-api
 ```
+
 - Initialize Go Modules
 ``` bash
 go mod tidy
 ```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This installs dependencies like Echo automatically.
 - Run all the files
 ``` bash
 go run .
 ```
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The server will run on: http://localhost:8080
+
 ---
 ## API Endpoints
 GET  /books → Fetch all books from the store.
@@ -61,4 +65,6 @@ POST  /books → Add a new book to the collection.
 PUT  /books/:id → Update details of an existing book.
 
 DELETE  /books/:id → Remove a book from the store using its ID
+
+
 
