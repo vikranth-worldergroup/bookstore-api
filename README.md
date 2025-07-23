@@ -14,3 +14,10 @@ This version uses **in-memory storage**, ideal for learning, testing, and protot
 - Delete a book by ID
 
 ---
+## 🛠 Tech Stack
+
+| Tool      | Description                  |
+|-----------|------------------------------|
+| Go        | Programming language         |
+| Echo      | Web framework (for REST API) |
+| In-Memory | Temporary data storage       |
