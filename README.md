@@ -14,10 +14,51 @@ This version uses **in-memory storage**, ideal for learning, testing, and protot
 - Delete a book by ID
 
 ---
-## 🛠 Tech Stack
+## Tech Stack
 
-| Tool      | Description                  |
-|-----------|------------------------------|
-| Go        | Programming language         |
-| Echo      | Web framework (for REST API) |
-| In-Memory | Temporary data storage       |
+- Language: Go (Golang)
+- Framework: Echo (Web framework for building REST APIs)
+- Storage: In-memory map (no database used in this version)
+- Testing Tool: Postman for testing API endpoints
+
+## Book Data Model
+
+Each book has the following structure:
+
+```go
+type Book struct {
+  ID      string  `json:"id"`
+  Title   string  `json:"title"`
+  Author  string  `json:"author"`
+  Price   float64 `json:"price"`
+  Content string  `json:"content"`
+}
+```
+---
+## How to run?
+
+- Clone the Repository
+``` bash
+git clone https://github.com/vikranth-worldergroup/golang-bookstore-api.git
+cd golang-bookstore-api
+```
+- Initialize Go Modules
+``` bash
+go mod tidy
+```
+- Run all the files
+``` bash
+go run .
+```
+---
+## API Endpoints
+GET  /books → Fetch all books from the store.
+
+GET  /books/:id → Retrieve a specific book using its ID.
+
+POST  /books → Add a new book to the collection.
+
+PUT  /books/:id → Update details of an existing book.
+
+DELETE  /books/:id → Remove a book from the store using its ID
+
