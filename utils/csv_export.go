@@ -4,7 +4,7 @@ import (
 	"bookstore/models"
 	"encoding/csv"
 	"fmt"
-
+	"strings"
 	"github.com/labstack/echo/v4"
 )
 
@@ -16,7 +16,14 @@ func Csvexport(book []models.Book,c echo.Context) error{
 	cswriter.Write([]string{"ID","Title","Author","Price","Content"})
 
 	for _,b := range book{
-		cswriter.Write([]string{b.ID,b.Title,b.Author,fmt.Sprintf("%.2f",b.Price),b.Content})
+		
+		authjoined:=[]string{}
+		for _,i := range b.Authors{
+			authjoined=append(authjoined,i.Name)
+		}
+		authnames:=strings.Join(authjoined,", ")
+		
+		cswriter.Write([]string{b.ID,b.Title,authnames,fmt.Sprintf("%.2f",b.Price),b.Content})
 	}
 
 	cswriter.Flush()

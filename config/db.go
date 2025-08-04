@@ -17,5 +17,5 @@ func Connect(){
 		log.Fatal("failed to connect db",err)
 	}
 	Db=db
-	Db.AutoMigrate(&models.Book{})
+	Db.AutoMigrate(&models.Book{},&models.Author{})
 }
